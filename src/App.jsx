@@ -578,7 +578,7 @@ export default function App() {
         {stage === "gallery" && (
           <section className="gallery-panel">
             <p className="eyebrow">A few little memories</p>
-            <h1>Birth dayyyy, Dudu!</h1>
+            <h1>Happy Birth dayyyy, Dudu!</h1>
             <p className="intro">
               I hope these make you smile today and remind you how loved you
               are.
