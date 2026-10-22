@@ -1,0 +1,1006 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #4a2538;
+  background: #fff5f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --accent-color: #c34f78;
+  --heading-color: #7c3153;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+body {
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 14% 15%, rgba(255, 209, 220, 0.62), transparent 34%),
+    radial-gradient(ellipse at 88% 82%, rgba(249, 216, 230, 0.74), transparent 36%),
+    #fff8f8;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  min-height: 48px;
+  padding: 0 23px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent-color);
+  box-shadow: 0 8px 20px rgba(195, 79, 120, 0.23);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: #ad3f68;
+  box-shadow: 0 11px 24px rgba(195, 79, 120, 0.3);
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--heading-color);
+  outline-offset: 4px;
+}
+
+.app-container {
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  place-items: center;
+  overflow-x: clip;
+  padding: 32px 18px;
+}
+
+.page {
+  animation: fade-in 700ms ease-out both;
+}
+
+.birthday-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 680px);
+  padding: clamp(28px, 6vw, 56px);
+  border: 1px solid rgba(195, 79, 120, 0.15);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 24px 80px rgba(117, 48, 77, 0.13);
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.birthday-card > * {
+  min-width: 0;
+}
+
+.birthday-card > .doodle {
+  min-width: initial;
+}
+
+.stage-gallery {
+  width: min(100%, 900px);
+}
+
+.stage-gate {
+  width: min(100%, 520px);
+  border-color: transparent;
+  background: rgba(255, 242, 239, 0.92);
+  box-shadow: none;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--accent-color);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+h1 {
+  margin: 0;
+  color: var(--heading-color);
+  font-size: clamp(2rem, 7vw, 3.35rem);
+  line-height: 1.14;
+}
+
+h2 {
+  margin: 0;
+  color: var(--heading-color);
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  line-height: 1.35;
+}
+
+.nowrap {
+  white-space: normal;
+}
+
+.intro {
+  max-width: 480px;
+  margin: 18px auto 25px;
+  color: #745a67;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.progress-track {
+  width: min(100%, 390px);
+  height: 9px;
+  margin: 28px auto 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #f4e3e9;
+}
+
+.progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #df7d9c, #bd4772);
+  transition: width 250ms ease;
+}
+
+.progress-label {
+  margin: 0 0 22px;
+  color: #967582;
+  font-size: 0.84rem;
+}
+
+.question-panel {
+  padding: clamp(20px, 4vw, 30px);
+  border: 1px solid #f2d5df;
+  border-radius: 20px;
+  background: #fff8fa;
+}
+
+.answer-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto 0;
+}
+
+.answer-form input {
+  width: min(100%, 300px);
+  min-height: 48px;
+  padding: 0 15px;
+  border: 1px solid #e7c8d3;
+  border-radius: 12px;
+  background: #fff;
+  color: #4a2538;
+}
+
+.answer-form input::placeholder {
+  color: #ac929e;
+}
+
+.hint-button {
+  min-height: 40px;
+  margin-top: 14px;
+  padding: 0 14px;
+  border: 1px solid #e6c4d0;
+  background: transparent;
+  box-shadow: none;
+  color: #984765;
+}
+
+.hint-button:hover {
+  background: #fff0f5;
+  box-shadow: none;
+}
+
+.hint-copy {
+  max-width: 360px;
+  margin: 12px auto 0;
+  color: #795f6b;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.error-message {
+  margin: 12px 0 0;
+  color: #a8324c;
+  font-size: 0.92rem;
+}
+
+.answer-success {
+  padding-top: 18px;
+  color: #70505e;
+}
+
+.answer-success p {
+  margin: 0 0 16px;
+}
+
+.treasure-two-panel {
+  padding: 16px 0;
+}
+
+.treasure-two-emoji {
+  display: grid;
+  width: 116px;
+  height: 116px;
+  place-items: center;
+  margin: 22px auto;
+  border: 5px solid #fff;
+  border-radius: 34px;
+  background: #fff0f5;
+  box-shadow: 0 12px 28px rgba(117, 48, 77, 0.12);
+  animation: gift-bounce 1.3s ease-in-out infinite;
+}
+
+.treasure-two-image {
+  display: block;
+  width: min(100%, 360px);
+  max-height: 360px;
+  margin: 0 auto 24px;
+  border: 5px solid #fff;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(117, 48, 77, 0.14);
+  object-fit: contain;
+}
+
+.celebration-panel {
+  padding: 10px 0;
+}
+
+.birthday-reveal {
+  isolation: isolate;
+  overflow: hidden;
+  padding-top: 28px;
+}
+
+.birthday-reveal > :not(.birthday-confetti) {
+  position: relative;
+  z-index: 1;
+}
+
+.birthday-confetti {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.birthday-confetti span {
+  position: absolute;
+  top: -32px;
+  color: #d76b8c;
+  font-size: 1.25rem;
+  animation: confetti-fall 3.6s linear infinite;
+}
+
+.birthday-confetti span:nth-child(3n) {
+  color: #e3ad55;
+}
+
+.birthday-confetti span:nth-child(3n + 1) {
+  color: #a95b7a;
+}
+
+.birthday-artwork {
+  position: relative;
+  width: min(100%, 330px);
+  min-height: 280px;
+  margin: 22px auto 28px;
+  animation: artwork-arrive 850ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.birthday-cake-photo {
+  display: block;
+  width: min(100%, 275px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  border: 6px solid #fff;
+  border-radius: 28px;
+  box-shadow: 0 16px 40px rgba(117, 48, 77, 0.18);
+  object-fit: cover;
+}
+
+.bubu-dudu-couple {
+  position: absolute;
+  right: max(0px, calc((100% - 275px) / 2 - 8px));
+  bottom: -12px;
+  width: clamp(112px, 29vw, 158px);
+  border: 5px solid #fff;
+  border-radius: 25px;
+  box-shadow: 0 10px 26px rgba(117, 48, 77, 0.17);
+  animation: character-arrive 700ms 350ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.reveal-eyebrow {
+  animation: text-arrive 600ms 180ms both;
+}
+
+.birthday-title {
+  animation: text-arrive 700ms 520ms both;
+}
+
+.birthday-title-line,
+.birthday-name {
+  display: block;
+}
+
+.birthday-name {
+  margin-top: 2px;
+  color: #df7694;
+}
+
+.birthday-name span {
+  display: inline-block;
+  animation: cake-wiggle 1.4s 1.2s ease-in-out infinite;
+}
+
+.reveal-message {
+  animation: text-arrive 700ms 720ms both;
+}
+
+.reveal-doodle {
+  animation: text-arrive 700ms 900ms both;
+}
+
+.reveal-button {
+  animation: text-arrive 700ms 1.05s both;
+}
+
+.big-emoji {
+  margin: 16px 0;
+  font-size: clamp(3rem, 10vw, 4.5rem);
+  line-height: 1.2;
+}
+
+.doodle-row {
+  margin: 18px 0;
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+}
+
+.pin-form {
+  max-width: 430px;
+}
+
+.pin-form input {
+  max-width: 220px;
+  text-align: center;
+  letter-spacing: 0.25em;
+}
+
+.pin-gate {
+  padding: 6px 4px 0;
+}
+
+.pin-character-frame {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin: 0 auto 30px;
+  overflow: hidden;
+  border-radius: 36px;
+  background: #f9dfe1;
+  box-shadow: 0 14px 30px rgba(152, 85, 91, 0.12);
+  animation: character-float 3s ease-in-out infinite;
+}
+
+.pin-character-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pin-heart-float {
+  position: absolute;
+  top: 7px;
+  right: 8px;
+  font-size: 1.65rem;
+  animation: heart-bob 1.8s ease-in-out infinite;
+}
+
+.pin-eyebrow {
+  margin-bottom: 10px;
+}
+
+.pin-gate h1 {
+  color: #683729;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.85rem, 6vw, 2.6rem);
+  font-weight: 700;
+}
+
+.pin-lock-icon {
+  margin: 4px 0 18px;
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+.pin-intro {
+  max-width: 365px;
+  margin: 0 auto 25px;
+  color: #96675e;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.pin-dots {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  margin: 0 auto 38px;
+}
+
+.pin-dot {
+  display: grid;
+  width: 64px;
+  height: 72px;
+  place-items: center;
+  border: 2px solid #ffd0ce;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.87);
+  box-shadow: 0 9px 22px rgba(146, 73, 73, 0.1);
+  color: #7c3153;
+  font-size: 1.8rem;
+  font-weight: 700;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.pin-dot-filled {
+  transform: scale(1.04);
+  background: #ffe1e2;
+}
+
+.pin-keypad {
+  display: grid;
+  width: min(100%, 300px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0 auto;
+}
+
+.pin-key {
+  min-height: 72px;
+  padding: 0;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 25px rgba(146, 73, 73, 0.1);
+  color: #713f34;
+  font-size: 1.8rem;
+}
+
+.pin-key:hover {
+  background: #ffe4e4;
+  box-shadow: 0 10px 25px rgba(146, 73, 73, 0.15);
+}
+
+.pin-key-utility {
+  color: #986b63;
+  font-size: 1.1rem;
+}
+
+.pin-visibility-button {
+  min-height: 38px;
+  margin-top: 15px;
+  padding: 0 12px;
+  background: transparent;
+  box-shadow: none;
+  color: #986b63;
+  font-size: 0.88rem;
+}
+
+.pin-visibility-button:hover {
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: none;
+}
+
+.wrong-pin-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 360px;
+  margin: -20px auto 26px;
+  padding: 10px 14px;
+  border: 1px solid #f4c6ca;
+  border-radius: 18px;
+  background: #fff;
+  color: #9b4056;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.5;
+  animation: wrong-pin-arrive 420ms ease-out both;
+}
+
+.wrong-pin-picture img {
+  width: 66px;
+  height: 66px;
+  flex: 0 0 auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.pin-gate-error .pin-character-frame {
+  animation: wrong-pin-shake 480ms ease-in-out both;
+}
+
+.pin-success-celebration {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  overflow: hidden;
+  padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
+  background: rgba(255, 240, 242, 0.96);
+  text-align: center;
+  animation: success-screen-arrive 280ms ease-out both;
+}
+
+.success-sprinkles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.success-sprinkles span {
+  position: absolute;
+  top: -36px;
+  color: #d76b8c;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  animation: success-sprinkle-fall 1.6s linear infinite;
+}
+
+.success-sprinkles span:nth-child(3n) {
+  color: #e3ad55;
+}
+
+.success-sprinkles span:nth-child(3n + 1) {
+  color: #a95b7a;
+}
+
+.success-kiss-cloud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(100vw, 520px);
+  height: min(100vw, 520px);
+  pointer-events: none;
+  transform: translate(-50%, -62%);
+}
+
+.success-kiss-cloud span {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  font-size: clamp(1.8rem, 7vw, 3.5rem);
+  opacity: 0;
+  animation: cartoon-kiss-burst 1.25s ease-out both;
+}
+
+.success-couple {
+  position: relative;
+  z-index: 1;
+  width: clamp(160px, 43vw, 235px);
+  border: 7px solid #fff;
+  border-radius: 32px;
+  box-shadow: 0 18px 42px rgba(117, 48, 77, 0.2);
+  animation: couple-kiss-arrive 750ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.success-message {
+  position: relative;
+  z-index: 1;
+  margin: 22px 0 0;
+  color: #7c3153;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  animation: text-arrive 450ms 350ms both;
+}
+
+.gallery-panel .intro {
+  margin-bottom: 20px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.photo-tile {
+  aspect-ratio: 1;
+  margin: 0;
+  overflow: hidden;
+  border: 4px solid #fff;
+  border-radius: 18px;
+  background: #f8e4eb;
+  box-shadow: 0 7px 20px rgba(117, 48, 77, 0.12);
+}
+
+.photo-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-fallback {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  justify-items: center;
+  gap: 8px;
+  padding: 12px;
+  color: #976278;
+  font-size: 0.85rem;
+}
+
+.photo-fallback span {
+  font-size: 2rem;
+}
+
+.closing-note {
+  margin: 20px 0 0;
+  color: var(--heading-color);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+}
+
+.footer-note {
+  margin: 12px 0 0;
+  color: #a17d8d;
+  font-size: 0.88rem;
+}
+
+.floating-heart {
+  position: absolute;
+  color: rgba(195, 79, 120, 0.2);
+  animation: float 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.heart-one {
+  top: 12%;
+  left: 12%;
+  font-size: 4.5rem;
+}
+
+.heart-two {
+  right: 13%;
+  bottom: 10%;
+  font-size: 5rem;
+  animation-delay: -2.2s;
+}
+
+.doodle {
+  position: absolute;
+  color: rgba(195, 79, 120, 0.36);
+  pointer-events: none;
+}
+
+.doodle-top {
+  top: 18px;
+  right: 26px;
+  font-size: 2rem;
+}
+
+.doodle-side {
+  bottom: 22px;
+  left: 24px;
+  font-size: 1.8rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-14px) rotate(8deg); }
+}
+
+@keyframes confetti-fall {
+  from { transform: translateY(-25px) rotate(0deg); opacity: 0; }
+  12% { opacity: 0.9; }
+  to { transform: translateY(720px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes artwork-arrive {
+  from { opacity: 0; transform: translateY(24px) scale(0.78) rotate(-5deg); }
+  72% { opacity: 1; transform: translateY(-5px) scale(1.035) rotate(1deg); }
+  to { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+}
+
+@keyframes character-arrive {
+  from { opacity: 0; transform: translate(18px, 18px) scale(0.72) rotate(8deg); }
+  75% { opacity: 1; transform: translate(-3px, -3px) scale(1.06) rotate(-2deg); }
+  to { opacity: 1; transform: translate(0, 0) scale(1) rotate(0); }
+}
+
+@keyframes text-arrive {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cake-wiggle {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-9deg); }
+  75% { transform: rotate(9deg); }
+}
+
+@keyframes gift-bounce {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-9px) rotate(3deg); }
+}
+
+@keyframes character-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes heart-bob {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-5px) scale(1.08); }
+}
+
+@keyframes wrong-pin-shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  25% { transform: translateX(-8px) rotate(-3deg); }
+  50% { transform: translateX(8px) rotate(3deg); }
+  75% { transform: translateX(-5px) rotate(-2deg); }
+}
+
+@keyframes wrong-pin-arrive {
+  from { opacity: 0; transform: translateY(-8px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes success-screen-arrive {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes success-sprinkle-fall {
+  from { transform: translateY(-30px) rotate(0); opacity: 0; }
+  15% { opacity: 1; }
+  to { transform: translateY(110vh) rotate(300deg); opacity: 0; }
+}
+
+@keyframes cartoon-kiss-burst {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.25) rotate(-14deg); }
+  22% { opacity: 1; }
+  75% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(var(--kiss-x, 90px), var(--kiss-y, -120px)) scale(1.2) rotate(15deg);
+  }
+}
+
+@keyframes couple-kiss-arrive {
+  0% { opacity: 0; transform: scale(0.6) rotate(-8deg); }
+  72% { opacity: 1; transform: scale(1.08) rotate(3deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@media (max-width: 560px) {
+  .app-container {
+    min-height: 100svh;
+    align-items: start;
+    padding: max(14px, env(safe-area-inset-top)) 12px max(18px, env(safe-area-inset-bottom));
+  }
+
+  .birthday-card {
+    width: 100%;
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .stage-gallery {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: clamp(1.85rem, 8vw, 2.6rem);
+    overflow-wrap: anywhere;
+  }
+
+  h2 {
+    font-size: clamp(1.25rem, 5.5vw, 1.65rem);
+    overflow-wrap: anywhere;
+  }
+
+  .intro {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .question-panel {
+    padding: 20px 15px;
+  }
+
+  .birthday-reveal {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .birthday-artwork {
+    width: min(100%, 280px);
+    min-height: 235px;
+    margin-top: 16px;
+    margin-bottom: 22px;
+  }
+
+  .birthday-cake-photo {
+    width: min(100%, 230px);
+  }
+
+  .bubu-dudu-couple {
+    right: max(0px, calc((100% - 230px) / 2 - 5px));
+    width: clamp(100px, 30vw, 136px);
+  }
+
+  .answer-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .answer-form input {
+    width: 100%;
+  }
+
+  .answer-form button {
+    width: 100%;
+  }
+
+  .pin-form input {
+    max-width: none;
+  }
+
+  .stage-gate {
+    padding: 24px 16px;
+  }
+
+  .pin-character-frame {
+    width: 146px;
+    height: 146px;
+    margin-bottom: 24px;
+    border-radius: 31px;
+  }
+
+  .pin-dots {
+    gap: 9px;
+    margin-bottom: 30px;
+  }
+
+  .pin-dot {
+    width: min(17vw, 62px);
+    height: min(19vw, 70px);
+    border-radius: 25px;
+  }
+
+  .pin-keypad {
+    width: min(100%, 280px);
+    gap: 10px;
+  }
+
+  .pin-key {
+    min-height: 66px;
+    border-radius: 25px;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .heart-one {
+    top: 8px;
+    left: 5px;
+    font-size: 2rem;
+  }
+
+  .heart-two {
+    right: 5px;
+    bottom: 8px;
+    font-size: 2.2rem;
+  }
+
+  .doodle-top {
+    top: 10px;
+    right: 14px;
+  }
+
+  .doodle-side {
+    bottom: 10px;
+    left: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .app-container {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .birthday-card {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .pin-dot {
+    width: 54px;
+    height: 62px;
+  }
+
+  .pin-keypad {
+    width: min(100%, 248px);
+    gap: 8px;
+  }
+
+  .pin-key {
+    min-height: 60px;
+    border-radius: 21px;
+  }
+
+  .success-kiss-cloud {
+    width: 100vw;
+    height: 100vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
