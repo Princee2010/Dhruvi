@@ -18,7 +18,7 @@ const quizQuestions = [
   },
   {
     question: "Which Colour top was I Wearing on our first Anniversary?",
-    answers: ["Pink", "Light Pink" ],
+    answers: ["Pink", "Light Pink"],
     hint: "It is a soft and delicate color often associated with love and affection.",
   },
   {
@@ -62,10 +62,8 @@ const photos = [
   {
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmULJ-aNQlQDy3J5d0SDW1Epi12HVjkHnyIn2gImSDsg&s=10",
     alt: "A little piece of happiness",
-  }
+  },
 ];
-
-
 
 function AnswerStep({ question, hint, answers, onContinue, buttonLabel }) {
   const [answer, setAnswer] = useState("");
@@ -495,14 +493,14 @@ export default function App() {
               Answer the clue to discover where your present is hiding.
             </p>
             <AnswerStep
-              answers={["bhoiru"]}
+              answers={["kabat", "Cabinate", "Cupboard"]}
               buttonLabel="I found it!"
-              hint="it is near to the place where I fed you"
-              onContinue={() => setStage("gift-one")}
-              question={`रसोई के नीचे छुपा है एक ठिकाना,
-जहाँ कम ही जाता है किसी का आना-जाना।
-अनाज और पुरानी चीज़ें रहती हैं जहाँ,
-अँधेरे में छुपा है तुम्हारा तोहफ़ा वहाँ! 🎁😉`}
+              hint="Think of a place where our silent conversations while waking takes place."
+              onContinue={() => setStage("gallery")}
+              question="Climb the stairs, but don't go too high,
+                        Look for a little space hiding nearby.
+                        Once home to something that helped the fire glow,
+                        A little surprise is waiting below! 🎁😉"
             />
           </>
         )}
@@ -563,14 +561,14 @@ export default function App() {
               Answer the clue to discover where your present is hiding.
             </p>
             <AnswerStep
-              answers={["kabat", "Cabinate", "Cupboard", ]}
+              answers={["bhoiru"]}
               buttonLabel="I found it!"
-              hint="Think of a place where our silent conversations while waking takes place."
-              onContinue={() => setStage("gallery")}
-              question="Climb the stairs, but don't go too high,
-                        Look for a little space hiding nearby.
-                        Once home to something that helped the fire glow,
-                        A little surprise is waiting below! 🎁😉"
+              hint="it is near to the place where I fed you"
+              onContinue={() => setStage("gift-one")}
+              question={`रसोई के नीचे छुपा है एक ठिकाना,
+                        जहाँ कम ही जाता है किसी का आना-जाना।
+                        अनाज और पुरानी चीज़ें रहती हैं जहाँ,
+                        अँधेरे में छुपा है तुम्हारा तोहफ़ा वहाँ! 🎁😉`}
             />
           </>
         )}
